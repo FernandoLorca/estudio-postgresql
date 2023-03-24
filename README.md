@@ -139,7 +139,7 @@ values (
     '12345678'
 );
 
-insert into telefonos(apellido, nombre, telefono, direccion)
+insert into telefonos(apellido, nombre, telefono, direction)
 values (
     'Fernández',
     'Alex ',
@@ -147,7 +147,7 @@ values (
     'Calle 111'
 );
 
-insert into telefonos(apellido, nombre, telefono, direccion)
+insert into telefonos(apellido, nombre, telefono, direction)
 values (
     'Lorca',
     'Diego',
@@ -155,7 +155,7 @@ values (
     'Calle 222'
 );
 
-insert into telefonos(apellido, nombre, telefono, direccion)
+insert into telefonos(apellido, nombre, telefono, direction)
 values (
     'Moya',
     'Francisco',
@@ -163,7 +163,7 @@ values (
     'Calle 333'
 );
 
-insert into telefonos(apellido, nombre, telefono, direccion)
+insert into telefonos(apellido, nombre, telefono, direction)
 values (
     'Moya',
     'Francisco',
