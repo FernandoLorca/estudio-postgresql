@@ -91,7 +91,7 @@ Para dar permisos de administrador al usuario:
 ALTER USER nombre_usuario WITH SUPERUSER;
 ```
 
-| nombre         | Apelido                        |
+| Comando        | Acción                         |
 | -------------- | ------------------------------ |
 | `\c nombre_db` | Conectar a DB                  |
 | `\l`           | Listar base de datos existente |
@@ -99,3 +99,99 @@ ALTER USER nombre_usuario WITH SUPERUSER;
 | `\d`           | Listar relaciones              |
 | `q o exit`     | Salir de la consola            |
 | `\h`           | Lista de comandos              |
+
+Ejercicio:
+
+```
+create database db_1;
+
+-- ingresar a la base de datos
+\c db_1;
+
+-- listar tablas
+\dt;
+
+-- eliminar tabla telefonos si existe
+drop table if exists telefonos;
+
+-- crear tabla telefonos
+create table telefonos (
+    id serial,
+    apellido varchar(50) not null,
+    nombre varchar(50) not null,
+    telefono varchar(50) not null
+);
+
+-- agregar columna direccion
+alter table telefonos add direccion varchar(50);
+
+-- insertar datos
+insert into telefonos(apellido, nombre, telefono)
+values (
+    'Pino',
+    'Fabian',
+    '12345678'
+);
+
+insert into telefonos(apellido, nombre, telefono, direccion)
+values (
+    'Fernández',
+    'Alex ',
+    '12345678',
+    'Calle 111'
+);
+
+insert into telefonos(apellido, nombre, telefono, direccion)
+values (
+    'Lorca',
+    'Diego',
+    '12345678',
+    'Calle 222'
+);
+
+insert into telefonos(apellido, nombre, telefono, direccion)
+values (
+    'Moya',
+    'Francisco',
+    '12345678',
+    'Calle 333'
+);
+
+insert into telefonos(apellido, nombre, telefono, direccion)
+values (
+    'Moya',
+    'Francisco',
+    '12345678',
+    'Calle 444'
+);
+
+-- listar datos
+select * from telefonos;
+
+-- listar campos especificos
+select nombre, telefono from telefonos;
+
+-- concatenar datos y mostrar otro nombre de columna con alias
+select nombre || ' ' || apellido as nombre_completo, telefono from telefonos;
+
+-- listar datos con condicion
+select * from telefonos where apellido = 'Pino';
+
+-- listar datos y ordenar asc o desc
+select * from telefonos order by nombre asc;
+
+-- limitar cantidad de datos
+select * from telefonos limit 2;
+
+-- actualizar datos
+update telefonos
+    set telefono = '87654321'
+    where id = 1;
+
+-- eliminar datos
+    delete from telefonos
+    where id = 1;
+
+-- eliminar tabla
+drop table telefonos;
+```
