@@ -30,6 +30,32 @@
 
 ## Ejecución de comandos
 
+Para instalar postgress con wsl primero se debe tener activado wsl 2. Activar wsl 2:
+
+Para revisar que distribucion y versión de wsl tengo:
+
+```
+wsl --list --verbose
+```
+
+Seleccionar wsl versión 1 o 2:
+
+```
+wsl --set-version <distribution name> <versionNumber>
+```
+
+Actualizar con `sudo apt update` y `sudo apt upgrade`. Posteriormente, para instalar postgres, ejecutar comando:
+
+```
+sudo apt installpostgresql postgresql-contrib
+```
+
+Confirmar la versión instalada:
+
+```
+psql --version
+```
+
 Para entrar al servicio postgres en mi terminal wsl debo ingresar el sgte comando
 
 ```
