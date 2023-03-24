@@ -58,6 +58,12 @@ psql --version
 
 [Información de instalación de PostgreSQL en WSL](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database)
 
+Para comenzar el servicio postgres:
+
+```
+sudo service postgresql start
+```
+
 Para entrar al servicio postgres en mi terminal wsl debo ingresar el sgte comando
 
 ```
