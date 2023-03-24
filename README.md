@@ -56,6 +56,8 @@ Confirmar la versión instalada:
 psql --version
 ```
 
+[Información de instalación de PostgreSQL en WSL](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database)
+
 Para entrar al servicio postgres en mi terminal wsl debo ingresar el sgte comando
 
 ```
