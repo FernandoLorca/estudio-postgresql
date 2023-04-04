@@ -97,18 +97,46 @@ Para dar permisos de administrador al usuario:
 ALTER USER nombre_usuario WITH SUPERUSER;
 ```
 
-| Comando        | Acción                         |
-| -------------- | ------------------------------ |
-| `\c nombre_db` | Conectar a DB                  |
-| `\l`           | Listar base de datos existente |
-| `\du`          | Listar usuario                 |
-| `\d`           | Listar relaciones              |
-| `q o exit`     | Salir de la consola            |
-| `\h`           | Lista de comandos              |
+| Comando                  | Acción                         |
+| ------------------------ | ------------------------------ |
+| `\c nombre_db`           | Conectar a DB                  |
+| `\l`                     | Listar base de datos existente |
+| `\du`                    | Listar usuario                 |
+| `\d`                     | Listar relaciones              |
+| `\dt`                    | Listar tablas                  |
+| `\h`                     | Lista de comandos              |
+| `q o exit`               | Salir de la consola            |
+| `CREATE DATABSE`         | nombre_db                      |
+| `CREATE TABLE telefonos` | Crear tabla                    |
+| `CREATE TABLE telefonos` | Crear tabla                    |
+
+```
+CREATE TABLE telefonos (
+id serial,
+apellido varchar(50) not null,
+nombre varchar(50) not null,
+telefono varchar(50) not null
+);
+
+```
+
+| `INSERT INTO telefonos` | Crear tabla |
+
+```
+
+insert into telefonos(apellido, nombre, telefono)
+values (
+'Pino',
+'Fabian',
+'12345678'
+);
+
+```
 
 Ejercicio:
 
 ```
+
 create database db_1;
 
 -- ingresar a la base de datos
@@ -122,10 +150,10 @@ drop table if exists telefonos;
 
 -- crear tabla telefonos
 create table telefonos (
-    id serial,
-    apellido varchar(50) not null,
-    nombre varchar(50) not null,
-    telefono varchar(50) not null
+id serial,
+apellido varchar(50) not null,
+nombre varchar(50) not null,
+telefono varchar(50) not null
 );
 
 -- agregar columna direccion
@@ -134,45 +162,45 @@ alter table telefonos add direccion varchar(50);
 -- insertar datos
 insert into telefonos(apellido, nombre, telefono)
 values (
-    'Pino',
-    'Fabian',
-    '12345678'
+'Pino',
+'Fabian',
+'12345678'
 );
 
 insert into telefonos(apellido, nombre, telefono, direction)
 values (
-    'Fernández',
-    'Alex ',
-    '12345678',
-    'Calle 111'
+'Fernández',
+'Alex ',
+'12345678',
+'Calle 111'
 );
 
 insert into telefonos(apellido, nombre, telefono, direction)
 values (
-    'Lorca',
-    'Diego',
-    '12345678',
-    'Calle 222'
+'Lorca',
+'Diego',
+'12345678',
+'Calle 222'
 );
 
 insert into telefonos(apellido, nombre, telefono, direction)
 values (
-    'Moya',
-    'Francisco',
-    '12345678',
-    'Calle 333'
+'Moya',
+'Francisco',
+'12345678',
+'Calle 333'
 );
 
 insert into telefonos(apellido, nombre, telefono, direction)
 values (
-    'Moya',
-    'Francisco',
-    '12345678',
-    'Calle 444'
+'Moya',
+'Francisco',
+'12345678',
+'Calle 444'
 );
 
 -- listar datos
-select * from telefonos;
+select \* from telefonos;
 
 -- listar campos especificos
 select nombre, telefono from telefonos;
@@ -181,23 +209,24 @@ select nombre, telefono from telefonos;
 select nombre || ' ' || apellido as nombre_completo, telefono from telefonos;
 
 -- listar datos con condicion
-select * from telefonos where apellido = 'Pino';
+select \* from telefonos where apellido = 'Pino';
 
 -- listar datos y ordenar asc o desc
-select * from telefonos order by nombre asc;
+select \* from telefonos order by nombre asc;
 
 -- limitar cantidad de datos
-select * from telefonos limit 2;
+select \* from telefonos limit 2;
 
 -- actualizar datos
 update telefonos
-    set telefono = '87654321'
-    where id = 1;
+set telefono = '87654321'
+where id = 1;
 
 -- eliminar datos
-    delete from telefonos
-    where id = 1;
+delete from telefonos
+where id = 1;
 
 -- eliminar tabla
 drop table telefonos;
+
 ```
