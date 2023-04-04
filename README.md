@@ -1,5 +1,22 @@
 # Estudio postgreSQL
 
+| Comando                                        | Acción                                 |
+| ---------------------------------------------- | -------------------------------------- |
+| `\c nombre_db`                                 | Conectar a DB                          |
+| `\l`                                           | Listar base de datos existente         |
+| `\du`                                          | Listar usuario                         |
+| `\d`                                           | Listar relaciones                      |
+| `\dt`                                          | Listar tablas                          |
+| `\h`                                           | Lista de comandos                      |
+| `q o exit`                                     | Salir de la consola                    |
+| `CREATE DATABSE`                               | nombre_db                              |
+| `CREATE TABLE tabla`                           | Crear tabla                            |
+| `INSERT INTO tabla`                            | Insertar valores a una tabla           |
+| `COUNT(*)`                                     | Selecciona total de registros de tabla |
+| `SELECT * FROM tabla WHERE apellido = 'Pino';` | Listar datos con condicion             |
+| `SELECT * FROM tabla ORDER BY nombre ASC;`     | Ordenar asc o desc                     |
+| `SELECT * FROM telefonos LIMIT 2;`             | Limitar cantidad de datos              |
+
 ## DBMS
 
 - Sistema gestor de bases de datos (Database Management System)
@@ -97,46 +114,18 @@ Para dar permisos de administrador al usuario:
 ALTER USER nombre_usuario WITH SUPERUSER;
 ```
 
-| Comando                  | Acción                         |
-| ------------------------ | ------------------------------ |
-| `\c nombre_db`           | Conectar a DB                  |
-| `\l`                     | Listar base de datos existente |
-| `\du`                    | Listar usuario                 |
-| `\d`                     | Listar relaciones              |
-| `\dt`                    | Listar tablas                  |
-| `\h`                     | Lista de comandos              |
-| `q o exit`               | Salir de la consola            |
-| `CREATE DATABSE`         | nombre_db                      |
-| `CREATE TABLE telefonos` | Crear tabla                    |
-| `CREATE TABLE telefonos` | Crear tabla                    |
-
 ```
-CREATE TABLE telefonos (
-id serial,
-apellido varchar(50) not null,
-nombre varchar(50) not null,
-telefono varchar(50) not null
-);
-
-```
-
-| `INSERT INTO telefonos` | Crear tabla |
-
-```
-
 insert into telefonos(apellido, nombre, telefono)
 values (
 'Pino',
 'Fabian',
 '12345678'
 );
-
 ```
 
 Ejercicio:
 
 ```
-
 create database db_1;
 
 -- ingresar a la base de datos
@@ -209,13 +198,13 @@ select nombre, telefono from telefonos;
 select nombre || ' ' || apellido as nombre_completo, telefono from telefonos;
 
 -- listar datos con condicion
-select \* from telefonos where apellido = 'Pino';
+select * from telefonos where apellido = 'Pino';
 
 -- listar datos y ordenar asc o desc
-select \* from telefonos order by nombre asc;
+select * from telefonos order by nombre asc;
 
 -- limitar cantidad de datos
-select \* from telefonos limit 2;
+select * from telefonos limit 2;
 
 -- actualizar datos
 update telefonos
@@ -228,5 +217,4 @@ where id = 1;
 
 -- eliminar tabla
 drop table telefonos;
-
 ```
