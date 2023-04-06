@@ -1,21 +1,27 @@
 # Estudio postgreSQL
 
-| Comando                                        | Acción                                 |
-| ---------------------------------------------- | -------------------------------------- |
-| `\c nombre_db`                                 | Conectar a DB                          |
-| `\l`                                           | Listar base de datos existente         |
-| `\du`                                          | Listar usuario                         |
-| `\d`                                           | Listar relaciones                      |
-| `\dt`                                          | Listar tablas                          |
-| `\h`                                           | Lista de comandos                      |
-| `q o exit`                                     | Salir de la consola                    |
-| `CREATE DATABSE`                               | nombre_db                              |
-| `CREATE TABLE tabla`                           | Crear tabla                            |
-| `INSERT INTO tabla`                            | Insertar valores a una tabla           |
-| `COUNT(*)`                                     | Selecciona total de registros de tabla |
-| `SELECT * FROM tabla WHERE apellido = 'Pino';` | Listar datos con condicion             |
-| `SELECT * FROM tabla ORDER BY nombre ASC;`     | Ordenar asc o desc                     |
-| `SELECT * FROM telefonos LIMIT 2;`             | Limitar cantidad de datos              |
+| Comando                                        | Acción                                                                                                                      |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `\c nombre_db`                                 | Conectar a DB                                                                                                               |
+| `\l`                                           | Listar base de datos existente                                                                                              |
+| `\du`                                          | Listar usuario                                                                                                              |
+| `\d`                                           | Listar relaciones                                                                                                           |
+| `\dt`                                          | Listar tablas                                                                                                               |
+| `\h`                                           | Lista de comandos                                                                                                           |
+| `q o exit`                                     | Salir de la consola                                                                                                         |
+| `CREATE DATABSE`                               | nombre_db                                                                                                                   |
+| `CREATE TABLE tabla`                           | Crear tabla                                                                                                                 |
+| `INSERT INTO tabla`                            | Insertar valores a una tabla                                                                                                |
+| `COUNT(*)`                                     | Selecciona total de registros de tabla                                                                                      |
+| `SELECT * FROM tabla WHERE apellido = 'Pino';` | Listar datos con condicion                                                                                                  |
+| `SELECT * FROM tabla ORDER BY nombre ASC;`     | Ordenar asc o desc                                                                                                          |
+| `SELECT * FROM telefonos LIMIT 2;`             | Limitar cantidad de datos                                                                                                   |
+| `SELECT MAX(nombre_columna) FROM tabla;`       | Devuelve valor máximo de columna monto                                                                                      |
+| `SELECT AVG(nombre_columna) FROM tabla;`       | Calcula el promedio de valores numericos de una columna                                                                     |
+| `SELECT SUM(nombre_columna) FROM tabla;`       | Suma valores numericos de una columna                                                                                       |
+| `SELECT DISTINCT(nombre_columna) FROM tabla;`  | Nos permite seleccionar todos los campos distintos en una columna, elimina duplicados en consulta select                    |
+| `SELECT columna FROM tabla GROUP BY columna`   | Agrupación de filas de tabla por columna                                                                                    |
+| `HAVING`                                       | Permite filtrar por el resultado de funciones de agregación. Util para aplicar condiciones a un conjunto de datos agrupados |
 
 ## DBMS
 
